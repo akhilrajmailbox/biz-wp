@@ -21,7 +21,7 @@ run sed -i "s|expose_php = On|expose_php = Off|g" /etc/php5/apache2/php.ini
 run sed -i "s|allow_url_fopen = On|allow_url_fopen = Off|g" /etc/php5/apache2/php.ini
 
 workdir /tmp
-run git clone -b master https://github.com/akhilrajmailbox/biz-wp.git
+run git clone -b biz-wp-dev https://github.com/akhilrajmailbox/biz-wp.git
 workdir /tmp/biz-wp
 run find /tmp/biz-wp/wp-content/plugins/*.zip -exec unzip {} \;
 run rm -r /tmp/biz-wp/wp-content/plugins/*.zip
