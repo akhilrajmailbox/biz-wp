@@ -1,4 +1,3 @@
-
 from torusware/speedus-ubuntu
 maintainer akhil
 run apt-get -y update
@@ -13,10 +12,9 @@ run apt-get -y install rsync
 run apt-get -y install php5-mysql
 run apt-get -y install php5-fpm
 run apt-get -y install openssh-client=1:6.6p1-2ubuntu1
-run apt-get install -y git
-#run apt-get install -y find
-run apt-get install -y unzip
-run apt-get install -y nano
+run apt-get -y install git
+run apt-get -y install unzip
+run apt-get -y install nano
 run mkdir /var/www/html/wordpress /home/apachefiles /etc/apache2/ssl
 
 run sed -i "s|expose_php = On|expose_php = Off|g" /etc/php5/apache2/php.ini
@@ -28,10 +26,10 @@ workdir /tmp/biz-wp
 run find /tmp/biz-wp/wp-content/plugins/*.zip -exec unzip {} \;
 run rm -r /tmp/biz-wp/wp-content/plugins/*.zip
 
-run cp /tmp/biz-wp/secure.conf /etc/apache2/sites-available/ && mv /tmp/biz-wp/secure.conf /home/apachefiles/
-run cp /tmp/biz-wp/redirection.conf /etc/apache2/sites-available/ && mv /tmp/biz-wp/redirection.conf /home/apachefiles/
-run cp /tmp/biz-wp/apache.crt /etc/apache2/ssl/ && mv /tmp/biz-wp/apache.crt /home/apachefiles/
-run cp /tmp/biz-wp/apache.key /etc/apache2/ssl/ && mv /tmp/biz-wp/apache.key /home/apachefiles/
+run cp /tmp/biz-wp/secure.conf /etc/apache2/sites-available/ && rm /tmp/biz-wp/secure.conf
+run cp /tmp/biz-wp/redirection.conf /etc/apache2/sites-available/ && rm /tmp/biz-wp/redirection.conf
+run cp /tmp/biz-wp/apache.crt /etc/apache2/ssl/ && rm /tmp/biz-wp/apache.crt
+run cp /tmp/biz-wp/apache.key /etc/apache2/ssl/ && rm /tmp/biz-wp/apache.key
 
 run cp wp-config-sample.php wp-config.php
 run sed -i "s|define('DB_NAME', 'database_name_here');|define('DB_NAME', 'wordpress');|g" wp-config.php
