@@ -15,7 +15,7 @@ run apt-get -y install openssh-client=1:6.6p1-2ubuntu1
 run apt-get -y install git
 run apt-get -y install unzip
 run apt-get -y install nano
-run mkdir /var/www/html/wordpress /home/apachefiles /etc/apache2/ssl
+run mkdir /var/www/html/wordpress /etc/apache2/ssl
 
 run sed -i "s|expose_php = On|expose_php = Off|g" /etc/php5/apache2/php.ini
 run sed -i "s|allow_url_fopen = On|allow_url_fopen = Off|g" /etc/php5/apache2/php.ini
