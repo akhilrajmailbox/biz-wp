@@ -25,6 +25,7 @@ run git clone -b master https://github.com/akhilrajmailbox/biz-wp.git
 workdir /tmp/biz-wp/wp-content/plugins
 run find /tmp/biz-wp/wp-content/plugins/*.zip -exec unzip {} \; || pwd
 run rm -r /tmp/biz-wp/wp-content/plugins/*.zip || pwd
+workdir /tmp/biz-wp
 
 run cp /tmp/biz-wp/secure.conf /etc/apache2/sites-available/ && rm /tmp/biz-wp/secure.conf
 run cp /tmp/biz-wp/redirection.conf /etc/apache2/sites-available/ && rm /tmp/biz-wp/redirection.conf
