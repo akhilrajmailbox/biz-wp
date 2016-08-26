@@ -32,7 +32,7 @@ run cp /tmp/biz-wp/apache.crt /etc/apache2/ssl/ && rm /tmp/biz-wp/apache.crt
 run cp /tmp/biz-wp/apache.key /etc/apache2/ssl/ && rm /tmp/biz-wp/apache.key
 
 run cp wp-config-sample.php wp-config.php
-run sed -i "s|define('DB_NAME', 'database_name_here');|define('DB_NAME', 'wordpress');|g" wp-config.php
+run sed -i "s|define('DB_NAME', 'database_name_here');|define('DB_NAME', 'wordpressprod');|g" wp-config.php
 run sed -i "s|define('DB_USER', 'username_here');|define('DB_USER', 'ubuntu');|g" wp-config.php
 run sed -i "s|define('DB_PASSWORD', 'password_here');|define('DB_PASSWORD', 'ubuntu');|g" wp-config.php
 run sed -i "s|define('DB_HOST', 'localhost');|define('DB_HOST', '192.168.1.234');|g" wp-config.php
